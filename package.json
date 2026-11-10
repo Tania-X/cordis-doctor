@@ -1,0 +1,38 @@
+{
+  "name": "cordis-doctor",
+  "version": "0.1.0",
+  "description": "Runtime health checks for Cordis plugin trees: cycles, unresolved services, stuck fibers",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "cordis",
+    "cordis-plugin",
+    "diagnostics",
+    "dependency-injection",
+    "plugin-system"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "tsx test/diagnose.test.ts && tsx test/integration.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cordisjs/plugin-loader": "1.0.0-rc.4",
+    "@types/node": "^22.18.0",
+    "cordis": "4.0.0-rc.6",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
